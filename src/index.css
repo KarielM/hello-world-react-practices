@@ -2,6 +2,29 @@ html {
     background: #fffae7;
 }
 
+img {
+  background-color:#ace9ff;
+}
+
+.button {
+  background-color:#0b607f;
+  border: none;
+  color: whitesmoke;
+  text-align: center;
+  padding: 15px 32px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  font-size: 24px;
+  width: 100%;
+}
+
+.button:hover {
+  color:white;
+  cursor: pointer;
+  background-color:#073e52;
+  box-shadow: 0 10px 10px 0 #01131a;
+}
+
 .container {
     display: flex;
     margin: auto;
@@ -15,22 +38,12 @@ html {
     margin-top: 75px;
 }
 
-.fixButton{
-    margin-left: 50px;
-    /* margin: auto; */
-    margin-top: 100px;
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 1000px;
+    margin-bottom: 25px;
   }
   
   .flip-card-inner {
@@ -66,3 +79,28 @@ html {
     color: black;
     transform: rotateY(180deg);
   }
+
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #0b607f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: hsl(197, 91%, 14%);
+}

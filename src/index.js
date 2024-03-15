@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// import HelloWorld from './App';
-// import AlertClicked from './App';
-// import AlertButtonChildren from './App';
-// import StateButtonCount from './App';
-// import LearnMappingUL from './App';
-// import MoreMappingTricks from './App';
+import HelloWorld from './App';
+import AlertClicked from './App';
+import AlertButtonChildren from './App';
+import StateButtonCount from './App';
+import LearnMappingUL from './App';
+import MoreMappingTricksProps from './App'
+import MoreMappingTricks from './App';
 import CreateForm from './App';
-// import RenderingJson from './App';
+import RenderingJson from './App';
 import FetchingAndRendering from './App';
 import MyButton from './App';
 
@@ -23,7 +24,7 @@ root.render(
 //  <StateButtonCount/>
 //  <LearnMappingUL/>
 //  <MoreMappingTricks/>
-//  <CreateForm/>
+ <CreateForm/>
 //  <RenderingJson/>
-<FetchingAndRendering/>
+//  <FetchingAndRendering/>
 );
