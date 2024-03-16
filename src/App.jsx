@@ -90,7 +90,7 @@ import React, {useState, Component, useEffect} from 'react';
 //         <div><MoreMappingTricksProps animals={myArray}/></div>
 //     )
 // }
-// function MoreMappingTricksProps(){
+// function MoreMappingTricksProps1(){
 //     const myArray = ['dog', 'cat', 'chicken', 'cow', 'sheep', 'horse'];
 //     let props = myArray;
 //     return(
@@ -125,39 +125,39 @@ import React, {useState, Component, useEffect} from 'react';
     // );
 // }
 
-export default class CreateForm extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            firstName: '',
-            lastName: ''
-        };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-    };
-    handleChange(event){
-        this.setState({[event.target.name]:event.target.value});
-    }
-    handleSubmit(event) {
-        alert(`Hello ${this.state.firstName} ${this.state.lastName}!`);
-        event.preventDefault();
-    }
-    render(){
-        return(
-            <form onSubmit = {this.handleSubmit}>
-                <label>
-                    First Name:
-                    <input type='text' value = {this.state.firstName} onChange = {this.handleChange} name='firstName'/>
-                </label>
-                <label>
-                    Last Name:
-                    <input type='text' value = {this.state.lastName} onChange = {this.handleChange} name='lastName'/>
-                </label>
-                <input type='submit' value='Greet Me!' className = 'button'/>
-            </form>
-        )
-    }
-}
+// export default class CreateForm extends Component {
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             firstName: '',
+//             lastName: ''
+//         };
+//         this.handleSubmit = this.handleSubmit.bind(this);
+//         this.handleChange = this.handleChange.bind(this);
+//     };
+//     handleChange(event){
+//         this.setState({[event.target.name]:event.target.value});
+//     }
+//     handleSubmit(event) {
+//         alert(`Hello ${this.state.firstName} ${this.state.lastName}!`);
+//         event.preventDefault();
+//     }
+//     render(){
+//         return(
+//             <form onSubmit = {this.handleSubmit}>
+//                 <label>
+//                     First Name:
+//                     <input type='text' value = {this.state.firstName} onChange = {this.handleChange} name='firstName'/>
+//                 </label>
+//                 <label>
+//                     Last Name:
+//                     <input type='text' value = {this.state.lastName} onChange = {this.handleChange} name='lastName'/>
+//                 </label>
+//                 <input type='submit' value='Greet Me!' className = 'button'/>
+//             </form>
+//         )
+//     }
+// }
 
 // export default function RenderingJson(){
 //     const jsonObject = [ 
@@ -187,45 +187,48 @@ export default class CreateForm extends Component {
 //         </>
 //     )
 // }
-// function MyButton({setMyUsers}){
-//     return (
-//       <button className='button' onClick={()=> {
-//             fetch('https://random-data-api.com/api/users/random_user?size=10')
-//                 .then(response => response.json())
-//                 .then(data => setMyUsers(data))
-//       }}>Click Me</button>
-//     )
-// }
+function MyButton({setMyUsers, setMyCount, count}){
+    return (
+      <button className = 'button1' onClick={()=> {
+            setMyCount(count + 1);
+            fetch('https://random-data-api.com/api/users/random_user?size=10')
+                .then(response => response.json())
+                .then(data => setMyUsers(data))
+      }}>Click Me</button>
+    )
+}
 
-// export default function FetchingAndRendering(){
-//     const [users, setUsers] = useState([]);
-//     useEffect(() => {
-//         fetch('https://random-data-api.com/api/users/random_user?size=10')
-//             .then(response => response.json())
-//             .then(data => setUsers(data))
-//     }, []);  
+export default function FetchingAndRendering(){
+    const [users, setUsers] = useState([]);
+    const [count, setCount] = useState(1);
+    useEffect(() => {
+        fetch('https://random-data-api.com/api/users/random_user?size=10')
+            .then(response => response.json())
+            .then(data => setUsers(data))
+    }, []);  
     
-//     return (
-//         <div>
-//             <MyButton setMyUsers={setUsers} />
-//             {users.map(user => 
-//                 <div className='flip-card'>
-//                     <div className='flip-card-inner'>
-//                         <div className='flip-card-front'>
-//                             <img src = {user.avatar}/>
-//                         </div>
-//                         <div className='flip-card-back'>
-//                             <h1>{user.first_name} {user.last_name}</h1>
-//                             <h3>{user.date_of_birth}</h3>
-//                             <h3>{user.social_insurance_number}</h3>
-//                             <p>{user.phone_number}</p>
-//                             <p>{user.email}</p>
-//                         </div>
-//                     </div>
-//                 </div>)}
-//         </div>
-//     )
-// }
+    return (
+        <div>
+            <MyButton setMyUsers={setUsers} setMyCount = {setCount} count = {count}/>
+            <p className = 'p1'>Times Rendered: {count}</p>
+            {users.map(user => 
+                <div className='flip-card'>
+                    <div className='flip-card-inner'>
+                        <div className='flip-card-front'>
+                            <img src = {user.avatar}/>
+                        </div>
+                        <div className='flip-card-back'>
+                            <h1>{user.first_name} {user.last_name}</h1>
+                            <h3>{user.date_of_birth}</h3>
+                            <h3>{user.social_insurance_number}</h3>
+                            <p>{user.phone_number}</p>
+                            <p>{user.email}</p>
+                        </div>
+                    </div>
+                </div>)}
+        </div>
+    )
+}
 //----------------------Practicing the flip css
 // export default function FetchingAndRendering(){
 //     return (

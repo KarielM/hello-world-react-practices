@@ -18,6 +18,22 @@ img {
   width: 100%;
 }
 
+.button1 {
+  background-color:#0b607f;
+  border: none;
+  color: whitesmoke;
+  text-align: center;
+  padding: 15px 32px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  font-size: 24px;
+  width: 310px;
+}
+
+.p1 {
+  margin-left: 85px;
+}
+
 .button:hover {
   color:white;
   cursor: pointer;

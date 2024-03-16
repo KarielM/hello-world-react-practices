@@ -24,7 +24,7 @@ root.render(
 //  <StateButtonCount/>
 //  <LearnMappingUL/>
 //  <MoreMappingTricks/>
- <CreateForm/>
+//  <CreateForm/>
 //  <RenderingJson/>
-//  <FetchingAndRendering/>
+ <FetchingAndRendering/>
 );
